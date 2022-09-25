@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.7)
 
-project(SDL2Test)
+project(phoenix)
+add_executable(phoenix src/main.c)
+find_package(OpenGL REQUIRED)
+find_package(GLUT REQUIRED)
+include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} )
 
-find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
-
-add_executable(SDL2Test src/main.c)
-target_link_libraries(SDL2Test ${SDL2_LIBRARIES})
+target_link_libraries(phoenix ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} )

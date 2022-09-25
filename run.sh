@@ -1,3 +1,3 @@
 #!/bin/bash
-sh ./build.sh
-./build/SDL2Test
+sh ./build.sh && \
+./build/phoenix
